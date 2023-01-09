@@ -1,0 +1,35 @@
+{
+  "name": "@vibbioinfocore/phyd3-example-app",
+  "version": "1.0.0",
+  "description": "An example app demonstrating the use of PhyD3",
+  "source": "src/app.js",
+  "type": "module",
+  "main": "dist/app.js",
+  "scripts": {
+    "start": "parcel serve src/index.html",
+    "build": "esbuild src/app.js --bundle --minify --outfile=dist/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vibbits/phyd3-example-app.git"
+  },
+  "author": "VIB Bioinformatics Core Facility <bits@vib.be>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vibbits/phyd3-example-app/issues"
+  },
+  "files": [
+    "dist/**/*.js"
+  ],
+  "homepage": "https://github.com/vibbits/phyd3-example-app#readme",
+  "devDependencies": {
+    "esbuild": "^0.16.16",
+    "parcel": "^2.8.2"
+  },
+  "dependencies": {
+    "@vibbioinfocore/phyd3": "^2.0.0-alpha.0",
+    "@vibbioinfocore/phyd3-parser-compat": "^0.0.2",
+    "@vibbioinfocore/phylio": "^1.0.1"
+  }
+}
