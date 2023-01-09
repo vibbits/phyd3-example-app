@@ -1,0 +1,38 @@
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+name: Release workflow
+
+jobs:
+  release:
+    name: Package release on Github and NPM
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+          registry-url: 'https://registry.npmjs.org/'
+      - run: npm ci
+      - run: npm run build
+
+      - name: Create github release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: ${{ github.ref_name }}
+          prerelease: false
+          draft: true
+          files: |
+            LICENSE
+            README.md
+            dist/app.js
+            package.json
+
+      - name: Publish to NPM
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
