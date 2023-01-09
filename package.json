@@ -1,6 +1,6 @@
 {
   "name": "@vibbioinfocore/phyd3-example-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An example app demonstrating the use of PhyD3",
   "source": "src/app.js",
   "type": "module",
