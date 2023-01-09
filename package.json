@@ -2,12 +2,12 @@
   "name": "@vibbioinfocore/phyd3-example-app",
   "version": "1.0.2",
   "description": "An example app demonstrating the use of PhyD3",
-  "source": "src/app.js",
+  "source": "src/index.js",
   "type": "module",
-  "main": "dist/app.js",
+  "main": "dist/index.js",
   "scripts": {
     "start": "parcel serve src/index.html",
-    "build": "esbuild src/app.js --bundle --minify --outfile=dist/app.js",
+    "build": "esbuild src/index.js --bundle --minify --format=esm --outfile=dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
